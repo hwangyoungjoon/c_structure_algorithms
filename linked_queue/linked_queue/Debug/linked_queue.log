@@ -1,0 +1,5 @@
+﻿  linked_queue_fun.c
+  test_linked_queue.c
+c:\users\mghys\source\repos\linked_queue\linked_queue\test_linked_queue.c(15): warning C4477: 'printf' : 서식 문자열 '%n'에 'int *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int'입니다.
+  코드를 생성하고 있습니다...
+  linked_queue.vcxproj -> C:\Users\mghys\source\repos\linked_queue\Debug\linked_queue.exe
