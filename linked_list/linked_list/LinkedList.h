@@ -5,7 +5,7 @@
 
 typedef int ElementType;
 
-// ³ëµå ¼±¾ğ
+// ë…¸ë“œ êµ¬ì¡°ì²´ í˜•ì„±( ë‹¤ìŒ ë…¸ë“œ í¬ì¸í„°ë¥¼ ê°€ì§)
 typedef struct tagNode
 {
 	ElementType Data;
@@ -15,7 +15,7 @@ typedef struct tagNode
 }Node;
 
 
-// ÇÔ¼ö¿øÇü ¼±¾ğ
+// ë§í¬ë“œ ë¦¬ìŠ¤íŠ¸ë¥¼ ìœ„í•œ í•¨ìˆ˜ ì„ ì–¸
 Node* sll_create_node(ElementType NewData);
 void sll_destory_node(Node* Node);
 void sll_append_node(Node** Head, Node* NewNode);
@@ -25,17 +25,3 @@ void sll_remove_node(Node** Head, Node* remove);
 Node* sll_get_node_at(Node* Head, int location);
 int sll_get_node_count(Node* Head);
 #endif
-
-
-
-
-
-//void main()
-//{
-//	Node* list = NULL;
-//	Node* NewNode = NULL;
-//	
-//	NewNode=sll_create_node(119);
-//
-//
-//}
