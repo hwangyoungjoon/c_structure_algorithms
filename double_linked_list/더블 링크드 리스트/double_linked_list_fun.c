@@ -1,10 +1,10 @@
 #include "double_linked_list.h"
 #include "stddef.h"
 
-//³ëµå »ı¼º
+//ë…¸ë“œ ìƒì„±
 node* dll_create_node(element_type new_data)
 {
-	node* newnode = (node*)malloc(sizeof(node)); //¸Ş¸ğ¸® ºÎ¿©
+	node* newnode = (node*)malloc(sizeof(node)); //ë©”ëª¨ë¦¬ ë¶€ì—¬
 	
 	newnode ->data = new_data;
 	newnode ->prev_node = NULL;
@@ -13,7 +13,7 @@ node* dll_create_node(element_type new_data)
 	return newnode;
 }
 
-//³ëµå¼Ò¸ê
+//ë…¸ë“œì†Œë©¸
 
 
 void dll_destroy_node(node* node)
@@ -22,12 +22,12 @@ void dll_destroy_node(node* node)
 	free(node);
 
 }
-// ³ëµåÃß°¡
+// ë…¸ë“œì¶”ê°€
 
 void dll_append_node(node** head, node* new_node)
 {
 
-	if ((*head) == NULL)
+	if ((*head) == NULL)// ë§í¬ë“œ ë¦¬ìŠ¤íŠ¸ì™€ ë™ì¼
 	{
 		*head = new_node;
 
@@ -38,18 +38,13 @@ void dll_append_node(node** head, node* new_node)
 		while (tail->next_node != NULL)
 		{
 			tail = tail->next_node;
-
 		}
 		tail->next_node = new_node;
-		new_node->prev_node = tail;
-	
-	
+		new_node->prev_node = tail;// ë§ˆì§€ë§‰ ìƒˆë…¸ë“œ ì•ì— ê¼¬ë¦¬ì™€ ì—°ê²°í•´ì¤Œ
 	}
-
-
 }
 
-//È¯Çü ¸µÅ©µå ¸®½ºÆ® ³ëµå Ãß°¡
+// ë¶€ë¡ í™˜í˜• ë§í¬ë“œ ë¦¬ìŠ¤íŠ¸ ë…¸ë“œ ì¶”ê°€
 void cdll_append_node(node** head, node* new_node)
 {
 
@@ -64,8 +59,8 @@ void cdll_append_node(node** head, node* new_node)
 	else
 	{
 		node* tail = (*head)->prev_node;
-		tail->next_node->prev_node = new_node;
-		tail->next_node = new_node;
+		tail->next_node->prev_node = new_node; //í—¤ë“œì˜ ì´ì „ ë…¸ë“œ(ì´ì „ ë§ˆì§€ë§‰ ë…¸ë“œ)ì— ìƒˆë¡œìš´ ë…¸ë“œì™€ ì—°ê²°
+		tail->next_node = new_node;// ì´ì „ ë§ˆì§€ë§‰ ë…¸ë“œì˜ ë‹¤ìŒ ë…¸ë“œë¥¼ ìƒˆë¡œìš´ ë…¸ë“œ ì°¸ì¡°
 
 		new_node->next_node = (*head);
 		new_node->prev_node = tail;
@@ -73,7 +68,7 @@ void cdll_append_node(node** head, node* new_node)
 	}
 
 }
-//È¯Çü ¸µÅ©µå ¸®½ºÆ® ³ëµå »èÁ¦
+//í™˜í˜• ë§í¬ë“œ ë¦¬ìŠ¤íŠ¸ ë…¸ë“œ ì‚­ì œ
 void cdll_remove_node(node** head, node* remove)
 {
 	if (*head == remove)
@@ -107,7 +102,7 @@ void cdll_remove_node(node** head, node* remove)
 
 
 
-//³ëµå»ğÀÔ
+//ë…¸ë“œì‚½ì…
 void dll_insert_after(node* current, node* new_node)
 {
 
@@ -125,7 +120,7 @@ void dll_insert_after(node* current, node* new_node)
 
 
 }
-//³ëµå »èÁ¦
+//ë…¸ë“œ ì‚­ì œ
 void dll_remove_node(node** head, node* remove)
 {
 	if (*head == remove)
@@ -171,7 +166,7 @@ node* dll_get_node_at(node* head, int location)
 
 }
 
-//³ëµå ¼ö¼¼±â
+//ë…¸ë“œ ìˆ˜ì„¸ê¸°
 int dll_get_node_count(node* head) {
 
 	int count = 0;
