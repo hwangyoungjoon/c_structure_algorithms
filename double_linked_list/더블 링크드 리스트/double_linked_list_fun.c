@@ -51,8 +51,8 @@ void cdll_append_node(node** head, node* new_node)
 	if ((*head) == NULL)
 	{
 
-		*head = new_node;
-		(*head)->prev_node = *head;
+		*head = new_node; 
+		(*head)->prev_node = *head; // 헤드 하나만 있을때는 자기자신을 참조함.
 		(*head)->next_node = *head;
 
 	}
@@ -106,15 +106,13 @@ void cdll_remove_node(node** head, node* remove)
 void dll_insert_after(node* current, node* new_node)
 {
 
-	new_node->next_node = current->next_node;
-	new_node->prev_node = current->prev_node;
+	new_node->next_node = current->next_node; //새로운 노드 뒤쪽에 원래 현재 노드의 다음 노드를 이어줌
+	new_node->prev_node = current->prev_node;// 새로운 노드 앞쪽에 원래 현재 노드의 이전 노드를 이어줌
 
 	if (current->next_node != NULL)
 	{
-		current->next_node->prev_node = new_node;
+		current->next_node->prev_node = new_node; 
 		current->prev_node->next_node = new_node;
-
-
 	}
 
 
@@ -137,15 +135,12 @@ void dll_remove_node(node** head, node* remove)
 	}
 	else 
 	{
-	
 		node* temp = remove;
 		if (remove->prev_node != NULL) remove->prev_node->next_node = temp->next_node;
 		if (remove->next_node != NULL)	remove->next_node->prev_node = temp->prev_node;
 
 		remove->prev_node = NULL;
 		remove->next_node = NULL;
-		
-	
 	}
 
 
@@ -160,10 +155,8 @@ node* dll_get_node_at(node* head, int location)
 	for (int count = 0; count < location; count++)
 	{
 		current = current->next_node;
-
 	}
 	return current;
-
 }
 
 //노드 수세기
@@ -172,9 +165,8 @@ int dll_get_node_count(node* head) {
 	int count = 0;
 	node * current = head;
 
-	while(current->next_node!=NULL)
+	while(current->next_node!=NULL) // 노드의 끝이 나올때 까지 카운트를 올림
 	{	
-		
 		current = current->next_node;
 		count++;
 	}
