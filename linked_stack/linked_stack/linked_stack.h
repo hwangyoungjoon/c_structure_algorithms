@@ -10,7 +10,7 @@ typedef struct tag_node
 	char* data;
 	struct tag_node* next_node;
 }node;
-
+// 노드가 다음 노드를 가리키고 있음
 
 typedef struct tag_linked_stack {
 
@@ -19,6 +19,7 @@ typedef struct tag_linked_stack {
 
 
 }linked_stack;
+// 탑노드와 리스트를 가지고 있음
 
 void lls_create_stack(linked_stack** stack);
 void lls_destory_stack(linked_stack* stack);
