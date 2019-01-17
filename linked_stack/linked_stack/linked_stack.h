@@ -20,6 +20,8 @@ typedef struct tag_linked_stack {
 
 }linked_stack;
 // 탑노드와 리스트를 가지고 있음
+// 탑포인터는 자유저장소에 존재하는 테일 노드의 주소를 가리킴
+// 리스트 포인터는 자유저장소에 존재하는 헤드 노드의 주소를 가리킴
 
 void lls_create_stack(linked_stack** stack);
 void lls_destory_stack(linked_stack* stack);
